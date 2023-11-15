@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        // SchedulesTableSeederを読み込むように指定
+        $this->call(SchedulesTableSeeder::class);
     }
 }
