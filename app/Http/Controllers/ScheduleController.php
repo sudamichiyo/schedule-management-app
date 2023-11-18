@@ -22,4 +22,12 @@ class ScheduleController extends Controller
       // 取得した値をビュー「schedule/show」に渡す
       return view('schedule/show', compact('schedule'));
     }
+
+    public function edit($id) {
+        // DBよりURIパラメータと同じIDを持つschedulesの情報を取得
+        $schedule = Schedule::findOrFail($id);
+  
+        // 取得した値をビュー「schedule/edit」に渡す
+        return view('schedule/edit', compact('schedule'));
+      }
 }

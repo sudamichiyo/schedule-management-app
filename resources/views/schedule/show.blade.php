@@ -10,4 +10,5 @@
         <li>{{ $schedule->content }}</li>
     </ul>
     <button><a href="/schedule">一覧に戻る</a></button>
+    <button><a href="/schedule/{{ $schedule->id }}/edit">編集</a></button>
 </body>
