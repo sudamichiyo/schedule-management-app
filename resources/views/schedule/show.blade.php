@@ -9,4 +9,5 @@
         <li>{{ $schedule->place }}</li>
         <li>{{ $schedule->content }}</li>
     </ul>
+    <button><a href="/schedule">一覧に戻る</a></button>
 </body>
