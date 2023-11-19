@@ -1,4 +1,5 @@
 @extends('schedule/layout')
+@section('title', 'スケジュール一覧')
 @section('content')
 <body>
     <h3>スケジュール一覧</h3>

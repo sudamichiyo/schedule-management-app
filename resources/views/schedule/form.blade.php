@@ -1,5 +1,4 @@
 <body>
-      <h3>編集画面です</h3>
       <form action="/schedule/{{ $schedule->id }}" method="post">
         @if($target == 'update')
         @method('put')
@@ -29,7 +28,7 @@
         @else
             <button type="submit">保存</button>
         @endif
-        <button><a href="schedule/delete">削除</a></button>
+        
       </form>
 
       <button><a href="/schedule/{{ $schedule->id }}">キャンセル</a></button>
