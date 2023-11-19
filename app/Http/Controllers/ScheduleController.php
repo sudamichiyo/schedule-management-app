@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Schedule;
+use App\Http\Requests\ScheduleRequest;
 
 class ScheduleController extends Controller
 {
@@ -31,7 +32,7 @@ class ScheduleController extends Controller
         return view('schedule/edit', compact('schedule'));
     }
 
-    public function update(Request $request, $id) {
+    public function update(ScheduleRequest $request, $id) {
         // DBよりURIパラメータと同じIDを持つschedulesの情報を取得
         $schedule = Schedule::findOrFail($id);
         
@@ -53,7 +54,7 @@ class ScheduleController extends Controller
         return view('schedule/create', compact('schedule'));
     }
 
-    public function store(Request $request) {
+    public function store(ScheduleRequest $request) {
 
         $schedule = new Schedule();
         
