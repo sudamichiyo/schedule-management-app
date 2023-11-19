@@ -24,5 +24,6 @@ Route::get('/schedule/{id}', [ScheduleController::class, 'show']);
 Route::get('/schedule/{id}/edit', [ScheduleController::class, 'edit']);
 Route::put('/schedule/{id}', [ScheduleController::class, 'update']);
 Route::post('/schedule', [ScheduleController::class, 'store']);
+Route::delete('/schedule/{id}', [ScheduleController::class, 'destroy']);
 
 

@@ -43,7 +43,7 @@ class ScheduleController extends Controller
         $schedule->content = $request->content;
         $schedule->save();
 
-        //スケジュール一覧に戻る
+        //詳細画面に戻る
         return redirect("/schedule/$id");
     }    
 
@@ -69,4 +69,14 @@ class ScheduleController extends Controller
         return redirect("/schedule");
     } 
 
+    public function destroy($id) {
+         // DBよりURIパラメータと同じIDを持つschedulesの情報を取得
+        $schedule = Schedule::find($id);
+
+        //レコードを削除
+        $schedule->delete();
+
+         //スケジュール一覧に戻る
+        return redirect("/schedule");
+    }
 }
