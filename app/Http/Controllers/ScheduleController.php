@@ -46,4 +46,27 @@ class ScheduleController extends Controller
         //スケジュール一覧に戻る
         return redirect("/schedule/$id");
     }    
+
+    public function create() {
+        // 空の$scheduleを渡す
+        $schedule = new Schedule();
+        return view('schedule/create', compact('schedule'));
+    }
+
+    public function store(Request $request) {
+
+        $schedule = new Schedule();
+        
+        //テーブルのレコードの情報を書き換え
+        $schedule->title = $request->title;
+        $schedule->begin = $request->begin;
+        $schedule->end = $request->end;
+        $schedule->place = $request->place;
+        $schedule->content = $request->content;
+        $schedule->save();
+
+        //スケジュール一覧に戻る
+        return redirect("/schedule");
+    } 
+
 }

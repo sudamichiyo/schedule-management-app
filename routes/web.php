@@ -19,8 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('/schedule', [ScheduleController::class, 'index']);
+Route::get('/schedule/create', [ScheduleController::class, 'create']);
 Route::get('/schedule/{id}', [ScheduleController::class, 'show']);
 Route::get('/schedule/{id}/edit', [ScheduleController::class, 'edit']);
 Route::put('/schedule/{id}', [ScheduleController::class, 'update']);
+Route::post('/schedule', [ScheduleController::class, 'store']);
 
 
