@@ -3,7 +3,9 @@
 </head>
 <body>
       <h3>編集画面です</h3>
-      <form action="" method="post">
+      <form action="/schedule/{{ $schedule->id }}" method="post">
+        @method('put')
+        @csrf
         <label>
             タイトル : <input type="text" name="title" value="{{ $schedule->title }}">
         </label>
@@ -23,6 +25,10 @@
         <label>
             内容 : <textarea cols="20" rows="5" name="content">{{ $schedule->content }}</textarea>
         </label>
+
+        <button type="submit">保存</button>
       </form>
+
+      <button><a href="/schedule/{{ $schedule->id }}">キャンセル</a></button>
 </body>
     

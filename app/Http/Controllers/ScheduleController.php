@@ -29,5 +29,21 @@ class ScheduleController extends Controller
   
         // 取得した値をビュー「schedule/edit」に渡す
         return view('schedule/edit', compact('schedule'));
-      }
+    }
+
+    public function update(Request $request, $id) {
+        // DBよりURIパラメータと同じIDを持つschedulesの情報を取得
+        $schedule = Schedule::findOrFail($id);
+        
+        //テーブルのレコードの情報を書き換え
+        $schedule->title = $request->title;
+        $schedule->begin = $request->begin;
+        $schedule->end = $request->end;
+        $schedule->place = $request->place;
+        $schedule->content = $request->content;
+        $schedule->save();
+
+        //スケジュール一覧に戻る
+        return redirect("/schedule/$id");
+    }    
 }

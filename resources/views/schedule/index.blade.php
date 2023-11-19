@@ -10,6 +10,5 @@
         <li>{{ $schedule->end }}</li>
       </ul>
       @endforeach
-
 </body>
     
