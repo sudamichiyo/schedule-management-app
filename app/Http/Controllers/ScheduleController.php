@@ -7,7 +7,13 @@ use App\Models\Schedule;
 use App\Http\Requests\ScheduleRequest;
 
 class ScheduleController extends Controller
-{
+{   
+    //ログインしていなかったらログイン画面にリダイレクトされる
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
+
     public function index() {
       // DBよりログインしているユーザーIDと一致するschedulesテーブルのuseridの値を全て取得
       $schedules = Schedule::where('userid', \Auth::user()->id)->get();

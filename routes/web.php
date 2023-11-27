@@ -15,9 +15,8 @@ use App\Http\Controllers\ScheduleController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//localhost:8000にアクセスが来たらlocalhost:8000/scheduleにリダイレクトする
+Route::redirect('/', '/schedule');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

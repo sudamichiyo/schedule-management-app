@@ -11,6 +11,10 @@
       </ul>
       @endforeach
       <button><a href="/schedule/create">登録</a></button>
+      <form action="/logout" method="post">
+        @csrf
+        <button type="submit">ログアウト</button>
+      </form>
 </body>
 @endsection
     
