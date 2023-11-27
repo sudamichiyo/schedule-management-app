@@ -9,8 +9,9 @@ use App\Http\Requests\ScheduleRequest;
 class ScheduleController extends Controller
 {
     public function index() {
-      // DBよりschedulesテーブルの値を全て取得
-      $schedules = Schedule::all();
+      // DBよりログインしているユーザーIDと一致するschedulesテーブルのuseridの値を全て取得
+      $schedules = Schedule::where('userid', \Auth::user()->id)->get();
+
 
       // 取得した値をビュー「schedule/index」に渡す
       return view('schedule/index', compact('schedules'));
