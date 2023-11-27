@@ -42,6 +42,7 @@ class ScheduleController extends Controller
         $schedule->end = $request->end;
         $schedule->place = $request->place;
         $schedule->content = $request->content;
+        $schedule->userid = $request->userid;
         $schedule->save();
 
         //詳細画面に戻る
@@ -64,6 +65,10 @@ class ScheduleController extends Controller
         $schedule->end = $request->end;
         $schedule->place = $request->place;
         $schedule->content = $request->content;
+
+        //ログインしているユーザーのidをくっつける
+        $schedule->userid = $request->user()->id;
+
         $schedule->save();
 
         //スケジュール一覧に戻る
