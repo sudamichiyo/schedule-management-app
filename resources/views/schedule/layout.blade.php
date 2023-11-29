@@ -1,5 +1,8 @@
 <head>
   <title>@yield('title')</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 @yield('content')
