@@ -49,7 +49,7 @@ class ScheduleController extends Controller
         $schedule->end = $request->end;
         $schedule->place = $request->place;
         $schedule->content = $request->content;
-        $schedule->userid = $request->userid;
+        $schedule->userid = $request->user()->id;
         $schedule->save();
 
         //詳細画面に戻る
